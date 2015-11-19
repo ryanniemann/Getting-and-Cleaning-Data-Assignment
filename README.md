@@ -4,7 +4,7 @@
 
 Checks to see if the dataset file is downloaded, if not the script will download the dataset file. 
 
-###Then, 
+###Then: 
 
 1.Merges the training and the test sets to create one data set.
 
@@ -16,6 +16,6 @@ Checks to see if the dataset file is downloaded, if not the script will download
 
 5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-###Result, 
+###Result: 
 
 The script produces the final tidy dataset "tidydata.txt".  
