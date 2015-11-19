@@ -50,11 +50,28 @@ Data <- subset(Data,select=selectedNames)
 
 
 #Uses descriptive activity names to name the activities in the data set.
+activity <- read.table("./UCI HAR Dataset/activity_labels.txt")
+activity[, 2] <- tolower(gsub("_", "", activity[, 2]))
+substr(activity[2, 2], 8, 8) <- toupper(substr(activity[2, 2], 8, 8))
+substr(activity[3, 2], 8, 8) <- toupper(substr(activity[3, 2], 8, 8))
 
+joinLabel <- rbind(dataActivityTrain,dataActivityTest)
+activityLabel <- activity[joinLabel[, 1], 2]
+joinLabel[, 1] <- activityLabel
+names(joinLabel) <- "activity"
+
+names(dataSubject) <- "subject"
+Data <- cbind(dataSubject, joinLabel, Data)
 
 
 #Appropriately labels the data set with descriptive activity names.
-
+names(Data)<-gsub("^t", "time", names(Data))
+names(Data)<-gsub("^f", "frequency", names(Data))
+names(Data)<-gsub("Acc", "Accelerometer", names(Data))
+names(Data)<-gsub("Gyro", "Gyroscope", names(Data))
+names(Data)<-gsub("Mag", "Magnitude", names(Data))
+names(Data)<-gsub("BodyBody", "Body", names(Data))
 
 
 #Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
