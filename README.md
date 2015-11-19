@@ -1,6 +1,6 @@
 # Getting-and-Cleaning-Data-Assignment
 
-##The R script called run_analysis.R does the following:  
+###The R script called run_analysis.R does the following:  
 
 Checks to see if the dataset file is downloaded, if not the script will download the dataset file. 
 
