@@ -19,3 +19,9 @@ Checks to see if the dataset file is downloaded, if not the script will download
 ###Result: 
 
 The script produces the final tidy dataset "tidydata.txt".  
+
+###Packages 
+If needed, you can uncomment these lines (5 and 6) to check for the packages required to run the script. 
+    #packages <- c("RCurl", "downloader", "data.table", "rapport", "tidyr", "plyr")
+    #sapply(packages, require, character.only=TRUE, quietly=TRUE)
+
