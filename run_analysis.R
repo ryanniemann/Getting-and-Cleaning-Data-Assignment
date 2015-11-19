@@ -1,11 +1,7 @@
 #Getting-and-Cleaning-Data-Assignment
 
 
-#Setting the working directory to "Temp"
-#setwd("C:/Temp")
-
-
-#Installing packages required for the script
+#If needed, you can uncomment these lines (5 and 6) to check for the packages required to run the script. 
 #packages <- c("RCurl", "downloader", "data.table", "rapport", "tidyr", "plyr")
 #sapply(packages, require, character.only=TRUE, quietly=TRUE)
 
