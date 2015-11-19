@@ -2,14 +2,14 @@
 
 
 #Setting the working directory to "Temp"
-setwd("C:/Temp")
+#setwd("C:/Temp")
 
 
 #Installing packages required for the script
-packages <- c("RCurl", "downloader", "data.table", "rapport", "tidyr")
-sapply(packages, require, character.only=TRUE, quietly=TRUE)
+#packages <- c("RCurl", "downloader", "data.table", "rapport", "tidyr", "plyr")
+#sapply(packages, require, character.only=TRUE, quietly=TRUE)
 
-
+This
 #Downloading Dataset File 
 #Check to see if the file is there, if not download it
 if (!file.exists("UCI HAR Dataset")) { 
@@ -73,5 +73,12 @@ names(Data)<-gsub("Mag", "Magnitude", names(Data))
 names(Data)<-gsub("BodyBody", "Body", names(Data))
 
 
-#Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+#Creates a second, independent tidy data set with the average of each 
+#variable for each activity and each subject.
+library(plyr);
+Data2<-aggregate(. ~subject + activity, Data, mean)
+Data2<-Data2[order(Data2$subject,Data2$activity),]
+write.table(Data2, file = "tidydata.txt",row.name=FALSE)
+
+
 
