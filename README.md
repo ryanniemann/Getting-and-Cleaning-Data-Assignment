@@ -2,7 +2,7 @@
 
 The R script called run_analysis.R does the following:  
 
-A. Checks to see if the dataset file is downloaded, if not the script will downloads the dataset file. 
+A. Checks to see if the dataset file is downloaded, if not the script will download the dataset file. 
 
 Then, 
 
