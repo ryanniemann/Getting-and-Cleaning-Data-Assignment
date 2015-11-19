@@ -9,7 +9,7 @@
 #packages <- c("RCurl", "downloader", "data.table", "rapport", "tidyr", "plyr")
 #sapply(packages, require, character.only=TRUE, quietly=TRUE)
 
-This
+
 #Downloading Dataset File 
 #Check to see if the file is there, if not download it
 if (!file.exists("UCI HAR Dataset")) { 
